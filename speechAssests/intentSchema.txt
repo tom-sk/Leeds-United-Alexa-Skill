@@ -1,0 +1,27 @@
+{
+    "intents": [
+      {
+        "intent": "ScoreIntent"
+      },
+      {
+        "intent": "TableIntent"
+      },
+      {
+        "slots": [
+            {
+              "name": "Position",
+              "type": "TABLE_POSITION"
+            }
+          ],
+        "intent": "AllTableIntent"
+      },
+      {
+        "intent": "NextMatchIntent"
+      },
+      {
+        "intent": "AMAZON.StopIntent"
+      }
+    ]
+  }
+
+  

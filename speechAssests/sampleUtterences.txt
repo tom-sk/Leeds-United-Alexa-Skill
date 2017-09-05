@@ -1,0 +1,21 @@
+ScoreIntent what is the latest score
+ScoreIntent what is the latest Leeds score
+ScoreIntent what was the last leeds score
+ScoreIntent leeds score
+
+AllTableIntent Who is {Position} in the championship
+AllTableIntent Who is {Position} in the championship
+AllTableIntent Who is {Position} in the league
+AllTableIntent Who is {Position} of the league
+AllTableIntent Who is {Position} in the table
+AllTableIntent Who is {Position} of the table
+
+TableIntent where are leeds in the table
+TableIntent where are leeds in the league
+TableIntent where are leeds in the championship
+TableIntent what position are leeds in the table
+TableIntent what position are leeds in the league
+TableIntent what position are leeds in the championship
+
+NextMatchIntent when are leeds playing next
+NextMatchIntent when is the next match
