@@ -75,6 +75,15 @@ var stateHandlers = {
             }
         });
     },
+    handleManagerIntent: function(request, context) {
+        let options = {};
+        options.speechText = ``;
+
+        options.speechText += 'Thomas Christiansen is the current manager of Leeds united. He started on June <say-as interpret-as="ordinal">15</say-as> 2017';
+        options.endSession = true;
+        context.succeed(buildResponse(options));
+        
+    },
     handleLaunchRequest: function(context) {
         let options = {}
         

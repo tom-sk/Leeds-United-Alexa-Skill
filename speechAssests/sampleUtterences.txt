@@ -9,6 +9,12 @@ AllTableIntent Who is {Position} in the league
 AllTableIntent Who is {Position} of the league
 AllTableIntent Who is {Position} in the table
 AllTableIntent Who is {Position} of the table
+AllTableIntent Who are {Position} in the championship
+AllTableIntent Who are {Position} in the championship
+AllTableIntent Who are {Position} in the league
+AllTableIntent Who are {Position} of the league
+AllTableIntent Who are {Position} in the table
+AllTableIntent Who are {Position} of the table
 
 TableIntent where are leeds in the table
 TableIntent where are leeds in the league
@@ -19,3 +25,8 @@ TableIntent what position are leeds in the championship
 
 NextMatchIntent when are leeds playing next
 NextMatchIntent when is the next match
+
+ManagerIntent who is the manager of leeds
+ManagerIntent who is the manager
+ManagerIntent who is the current manager of leeds
+ManagerIntent who is the current manager

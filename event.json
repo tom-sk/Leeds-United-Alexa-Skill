@@ -20,7 +20,7 @@
           "value": "bottom"
         }
       },
-      "name": "AllTableIntent"
+      "name": "ManagerIntent"
     },
     "type": "IntentRequest",
     "requestId": "request5678"

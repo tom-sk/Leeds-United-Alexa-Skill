@@ -36,6 +36,10 @@ exports.handler = function(event, context) {
 
                     stateHandlers.handleNextMatchIntent(request, context);
 
+                }else if(request.intent.name === "ManagerIntent"){
+
+                    stateHandlers.handleManagerIntent(request, context);
+
                 } else if (request.intent.name === "AMAZON.StopIntent" || request.intent.name === "AMAZON.CancelIntent") {
                     context.succeed(buildResponse({
                         speechText: 'Good bye',
