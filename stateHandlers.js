@@ -12,7 +12,7 @@ var stateHandlers = {
                 context.fail(err);
             } else {
                 options.speechText += score.teamName + ' ' + score.result + ' in there match against ' + score.opponentName + '. ';
-                options.speechText += 'The score was, ' + score.teamName + ' <say-as interpret-as="ordinal">' + score.teamGoals + '</say-as>, ' + score.opponentName + ' <say-as interpret-as="ordinal">' + score.opponentGoals + '</say-as>';
+                options.speechText += 'The score was, ' + score.teamName + ' <say-as interpret-as="cardinal">' + score.teamGoals + '</say-as>, ' + score.opponentName + ' <say-as interpret-as="cardinal">' + score.opponentGoals + '</say-as>';
     
                 options.endSession = true;
                 context.succeed(buildResponse(options));
