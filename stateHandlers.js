@@ -2,6 +2,7 @@
 
 var request = require('request');
 var moment = require('moment');
+var helperFunctions = require('./helperFunctions.js');
 var stateHandlers = {
    handleScoreIntent: function(request, context) {
         let options = {};
@@ -32,7 +33,7 @@ var stateHandlers = {
                 options.speechText += 'with ' + table.points + ' points, ' + table.goals + ' goals, ' + table.wins + ' wins, ' + table.draws + ' draws '
                                        + 'and ' + table.losses + ' losses';
                 options.endSession = true;
-                context.succeed(buildResponse(options));
+                context.succeed(helperFunctions.buildResponse(options));
             }
         });
     },
@@ -57,7 +58,7 @@ var stateHandlers = {
             } else {
                 options.speechText += `${table[0].teamName} are <say-as interpret-as="ordinal">${position}</say-as> in the Championship`;
                 options.endSession = true;
-                context.succeed(buildResponse(options));
+                context.succeed(helperFunctions.buildResponse(options));
             }
         });
     },
@@ -71,7 +72,7 @@ var stateHandlers = {
             } else {
                 options.speechText += 'Leeds will play ' + nextMatch.opponentName + ' ' + nextMatch.homeAway + ' on ' + nextMatch.date + ' at ' + nextMatch.time.hour + ' ' + nextMatch.time.min;
                 options.endSession = true;
-                context.succeed(buildResponse(options));
+                context.succeed(helperFunctions.buildResponse(options));
             }
         });
     },
@@ -81,7 +82,7 @@ var stateHandlers = {
 
         options.speechText += 'Thomas Christiansen is the current manager of Leeds united. He started on June <say-as interpret-as="ordinal">15</say-as> 2017';
         options.endSession = true;
-        context.succeed(buildResponse(options));
+        context.succeed(helperFunctions.buildResponse(options));
         
     },
     handleLaunchRequest: function(context) {
@@ -91,10 +92,10 @@ var stateHandlers = {
         options.repromptText = "You can say what is the latest score, where are leeds in the table, and when are leeds playing next.";
         options.endSession = false;
 
-        context.succeed(buildResponse(options));
+        context.succeed(helperFunctions.buildResponse(options));
     }
 }
-//Should probally be in env file
+// Should probally be in env file
 var API_KEY = '3f3fd8da342c439eb501d0e00568c104'; 
 
 function getScore(callback){
@@ -245,53 +246,7 @@ function matchInformation(game) {
     return score;
 }
 
-function buildResponse(options) {
-    var response = {
-        version: "1.0",
-        response: {
-            outputSpeech: {
-            type: "SSML",
-            ssml: "<speak>" + options.speechText + "</speak>" 
-            },
-            shouldEndSession: options.endSession
-        }
-    };
 
-    if(options.repromptText){
-        response.response.repromptText = {
-            outputSpeech: {
-                type: "SSML",
-                ssml: "<speak>" + options.repromptText + "</speak>" 
-            }
-        }
-    };
-
-    if(options.session && options.session.attributes) {
-        response.sessionAttributes = options.session.attributes;
-    }
-
-    if(options.cardTitle) {
-        response.response.card = {
-            type: "Simple",
-            title: options.cardTitle,
-            content: "Welcome to Leeds Football Skill"
-        }
-    }
-
-    if(options.imageUrl){
-        response.response.card.type = "Standard";
-        response.response.card.text = options.cardContent;
-        response.response.card.image = {
-            smallImageUrl: options.imageUrl,
-            largeImageUrl: options.imageUrl
-        };
-    } else {
-        
-        // response.response.card.content = options.cardContent;
-    }
-
-    return response;
-}
 
 
 module.exports = stateHandlers;

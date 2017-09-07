@@ -1,7 +1,7 @@
 'use strict';
 
 var stateHandlers = require('./stateHandlers');
-
+var helperFunctions = require('./helperFunctions.js');
 exports.handler = function(event, context) {
 
     try {
@@ -41,9 +41,14 @@ exports.handler = function(event, context) {
                     stateHandlers.handleManagerIntent(request, context);
 
                 } else if (request.intent.name === "AMAZON.StopIntent" || request.intent.name === "AMAZON.CancelIntent") {
-                    context.succeed(buildResponse({
+                    context.succeed(helperFunctions.buildResponse({
                         speechText: 'Good bye',
                         endSession: true
+                    }))
+                } else if (request.intent.name === "AMAZON.HelpIntent"){
+                    context.succeed(helperFunctions.buildResponse({
+                        speechText: "You can say what is the latest score, where are leeds in the table, and when are leeds playing next.",
+                        endSession: false
                     }))
                 } else {
                     throw "Unknown Intent type";
@@ -58,11 +63,4 @@ exports.handler = function(event, context) {
     }
     
 }
-
-
-
-
-
-
-
 

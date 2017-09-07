@@ -15,12 +15,11 @@
     "intent": {
       "slots": {
         "Position": {
-
           "name": "Position",
           "value": "bottom"
         }
       },
-      "name": "ManagerIntent"
+      "name": "TableIntent"
     },
     "type": "IntentRequest",
     "requestId": "request5678"

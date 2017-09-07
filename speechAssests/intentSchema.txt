@@ -19,7 +19,13 @@
         "intent": "NextMatchIntent"
       },
       {
+        "intent": "ManagerIntent"
+      },
+      {
         "intent": "AMAZON.StopIntent"
+      },
+      {
+        "intent": "AMAZON.HelpIntent"
       }
     ]
   }

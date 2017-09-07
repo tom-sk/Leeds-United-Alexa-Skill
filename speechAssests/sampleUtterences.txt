@@ -2,26 +2,29 @@ ScoreIntent what is the latest score
 ScoreIntent what is the latest Leeds score
 ScoreIntent what was the last leeds score
 ScoreIntent leeds score
+ScoreIntent score
 
-AllTableIntent Who is {Position} in the championship
 AllTableIntent Who is {Position} in the championship
 AllTableIntent Who is {Position} in the league
 AllTableIntent Who is {Position} of the league
 AllTableIntent Who is {Position} in the table
 AllTableIntent Who is {Position} of the table
 AllTableIntent Who are {Position} in the championship
-AllTableIntent Who are {Position} in the championship
 AllTableIntent Who are {Position} in the league
-AllTableIntent Who are {Position} of the league
 AllTableIntent Who are {Position} in the table
-AllTableIntent Who are {Position} of the table
+
 
 TableIntent where are leeds in the table
 TableIntent where are leeds in the league
 TableIntent where are leeds in the championship
+TableIntent where are we in the table
+TableIntent where are we in the league
+TableIntent where are we in the championship
 TableIntent what position are leeds in the table
 TableIntent what position are leeds in the league
 TableIntent what position are leeds in the championship
+TableIntent table
+TableIntent table position
 
 NextMatchIntent when are leeds playing next
 NextMatchIntent when is the next match
