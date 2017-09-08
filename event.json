@@ -16,10 +16,10 @@
       "slots": {
         "Position": {
           "name": "Position",
-          "value": "bottom"
+          "value": "19th"
         }
       },
-      "name": "TableIntent"
+      "name": "ScoreIntent"
     },
     "type": "IntentRequest",
     "requestId": "request5678"

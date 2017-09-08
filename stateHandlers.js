@@ -16,7 +16,7 @@ var stateHandlers = {
                 options.speechText += 'The score was, ' + score.teamName + ' <say-as interpret-as="cardinal">' + score.teamGoals + '</say-as>, ' + score.opponentName + ' <say-as interpret-as="cardinal">' + score.opponentGoals + '</say-as>';
     
                 options.endSession = true;
-                context.succeed(buildResponse(options));
+                context.succeed(helperFunctions.buildResponse(options));
             }
 
         });
